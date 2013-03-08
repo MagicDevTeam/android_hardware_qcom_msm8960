@@ -16,41 +16,40 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef __LINUX_MSM_ADSP_H
-#define __LINUX_MSM_ADSP_H
-#include <linux/types.h>
-#include <linux/ioctl.h>
+#ifndef WCD9XXX_CODEC_DIGITAL_H
+#define WCD9XXX_CODEC_DIGITAL_H
+#define WCD9XXX_A_CHIP_CTL (0x00)
+#define WCD9XXX_A_CHIP_CTL__POR (0x00000000)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_MAGIC 'q'
-struct adsp_command_t {
- uint16_t queue;
- uint32_t len;
+#define WCD9XXX_A_CHIP_STATUS (0x01)
+#define WCD9XXX_A_CHIP_STATUS__POR (0x00000000)
+#define WCD9XXX_A_CHIP_ID_BYTE_0 (0x04)
+#define WCD9XXX_A_CHIP_ID_BYTE_0__POR (0x00000000)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- uint8_t *data;
-};
-struct adsp_event_t {
- uint16_t type;
+#define WCD9XXX_A_CHIP_ID_BYTE_1 (0x05)
+#define WCD9XXX_A_CHIP_ID_BYTE_1__POR (0x00000000)
+#define WCD9XXX_A_CHIP_ID_BYTE_2 (0x06)
+#define WCD9XXX_A_CHIP_ID_BYTE_2__POR (0x00000000)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- uint32_t timeout_ms;
- uint16_t msg_id;
- uint16_t flags;
- uint32_t len;
+#define WCD9XXX_A_CHIP_ID_BYTE_3 (0x07)
+#define WCD9XXX_A_CHIP_ID_BYTE_3__POR (0x00000001)
+#define WCD9XXX_A_CHIP_VERSION (0x08)
+#define WCD9XXX_A_CHIP_VERSION__POR (0x00000020)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- uint8_t *data;
-};
-#define ADSP_IOCTL_ENABLE   _IOR(ADSP_IOCTL_MAGIC, 1, unsigned)
-#define ADSP_IOCTL_DISABLE   _IOR(ADSP_IOCTL_MAGIC, 2, unsigned)
+#define WCD9XXX_A_SB_VERSION (0x09)
+#define WCD9XXX_A_SB_VERSION__POR (0x00000010)
+#define WCD9XXX_A_SLAVE_ID_1 (0x0C)
+#define WCD9XXX_A_SLAVE_ID_1__POR (0x00000077)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_DISABLE_ACK   _IOR(ADSP_IOCTL_MAGIC, 3, unsigned)
-#define ADSP_IOCTL_WRITE_COMMAND   _IOR(ADSP_IOCTL_MAGIC, 4, struct adsp_command_t *)
-#define ADSP_IOCTL_GET_EVENT   _IOWR(ADSP_IOCTL_MAGIC, 5, struct adsp_event_data_t *)
-#define ADSP_IOCTL_SET_CLKRATE   _IOR(ADSP_IOCTL_MAGIC, 6, unsigned)
+#define WCD9XXX_A_SLAVE_ID_2 (0x0D)
+#define WCD9XXX_A_SLAVE_ID_2__POR (0x00000066)
+#define WCD9XXX_A_SLAVE_ID_3 (0x0E)
+#define WCD9XXX_A_SLAVE_ID_3__POR (0x00000055)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_DISABLE_EVENT_RSP   _IOR(ADSP_IOCTL_MAGIC, 10, unsigned)
-#define ADSP_IOCTL_REGISTER_PMEM   _IOW(ADSP_IOCTL_MAGIC, 13, unsigned)
-#define ADSP_IOCTL_UNREGISTER_PMEM   _IOW(ADSP_IOCTL_MAGIC, 14, unsigned)
-#define ADSP_IOCTL_ABORT_EVENT_READ   _IOW(ADSP_IOCTL_MAGIC, 15, unsigned)
+#define WCD9XXX_A_CDC_CTL (0x80)
+#define WCD9XXX_A_CDC_CTL__POR (0x00000000)
+#define WCD9XXX_A_LEAKAGE_CTL (0x88)
+#define WCD9XXX_A_LEAKAGE_CTL__POR (0x00000004)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_LINK_TASK   _IOW(ADSP_IOCTL_MAGIC, 16, unsigned)
 #endif
 

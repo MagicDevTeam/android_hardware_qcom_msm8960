@@ -73,3 +73,4 @@ struct msm_rotator_platform_data {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
+

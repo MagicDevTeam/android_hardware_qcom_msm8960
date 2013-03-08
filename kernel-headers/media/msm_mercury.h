@@ -104,3 +104,4 @@ struct msm_mercury_hw_cmds {
  struct msm_mercury_hw_cmd hw_cmd[1];
 };
 #endif
+

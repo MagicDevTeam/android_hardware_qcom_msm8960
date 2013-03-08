@@ -98,3 +98,4 @@ struct msm_gemini_hw_cmds {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
+

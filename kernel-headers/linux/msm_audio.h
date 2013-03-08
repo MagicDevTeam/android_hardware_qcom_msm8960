@@ -343,3 +343,4 @@ struct msm_acdb_cmd_device {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
+

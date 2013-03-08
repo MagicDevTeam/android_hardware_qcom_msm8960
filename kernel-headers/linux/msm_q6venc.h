@@ -114,57 +114,57 @@ enum venc_mem_region_enum {
  VENC_PMEM_SMI
 };
 struct venc_buf_type {
- unsigned int region;
+ u32 region;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int phys;
- unsigned int size;
+ u32 phys;
+ u32 size;
  int offset;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_qp_range {
- unsigned int min_qp;
- unsigned int max_qp;
+ u32 min_qp;
+ u32 max_qp;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_frame_rate {
- unsigned int frame_rate_num;
- unsigned int frame_rate_den;
+ u32 frame_rate_num;
+ u32 frame_rate_den;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_slice_info {
- unsigned int slice_mode;
- unsigned int units_per_slice;
+ u32 slice_mode;
+ u32 units_per_slice;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_extra_data {
- unsigned int slice_extra_data_flag;
- unsigned int slice_client_data1;
- unsigned int slice_client_data2;
+ u32 slice_extra_data_flag;
+ u32 slice_client_data1;
+ u32 slice_client_data2;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int slice_client_data3;
- unsigned int none_extra_data_flag;
- unsigned int none_client_data1;
- unsigned int none_client_data2;
+ u32 slice_client_data3;
+ u32 none_extra_data_flag;
+ u32 none_client_data1;
+ u32 none_client_data2;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int none_client_data3;
+ u32 none_client_data3;
 };
 struct venc_common_config {
- unsigned int standard;
+ u32 standard;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int input_frame_height;
- unsigned int input_frame_width;
- unsigned int output_frame_height;
- unsigned int output_frame_width;
+ u32 input_frame_height;
+ u32 input_frame_width;
+ u32 output_frame_height;
+ u32 output_frame_width;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int rotation_angle;
- unsigned int intra_period;
- unsigned int rate_control;
+ u32 rotation_angle;
+ u32 intra_period;
+ u32 rate_control;
  struct venc_frame_rate frame_rate;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int bitrate;
+ u32 bitrate;
  struct venc_qp_range qp_range;
- unsigned int iframe_qp;
- unsigned int pframe_qp;
+ u32 iframe_qp;
+ u32 pframe_qp;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct venc_slice_info slice_config;
  struct venc_extra_data extra_data;
@@ -179,50 +179,50 @@ struct venc_nonio_buf_config {
  struct venc_buf_type vlc_buf;
 };
 struct venc_mpeg4_config {
- unsigned int profile;
+ u32 profile;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int level;
- unsigned int time_resolution;
- unsigned int ac_prediction;
- unsigned int hec_interval;
+ u32 level;
+ u32 time_resolution;
+ u32 ac_prediction;
+ u32 hec_interval;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int data_partition;
- unsigned int short_header;
- unsigned int rvlc_enable;
+ u32 data_partition;
+ u32 short_header;
+ u32 rvlc_enable;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_h263_config {
- unsigned int profile;
- unsigned int level;
+ u32 profile;
+ u32 level;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_h264_config {
- unsigned int profile;
- unsigned int level;
- unsigned int max_nal;
+ u32 profile;
+ u32 level;
+ u32 max_nal;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int idr_period;
+ u32 idr_period;
 };
 struct venc_pmem {
  int src;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int fd;
- unsigned int offset;
+ u32 offset;
  void *virt;
  void *phys;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int size;
+ u32 size;
 };
 struct venc_buffer {
  unsigned char *ptr_buffer;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int size;
- unsigned int len;
- unsigned int offset;
+ u32 size;
+ u32 len;
+ u32 offset;
  long long time_stamp;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int flags;
- unsigned int client_data;
+ u32 flags;
+ u32 client_data;
 };
 struct venc_buffers {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -233,7 +233,7 @@ struct venc_buffers {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct venc_buffer_flush {
- unsigned int flush_mode;
+ u32 flush_mode;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 union venc_msg_data {
@@ -242,11 +242,11 @@ union venc_msg_data {
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct venc_msg {
- unsigned int status_code;
- unsigned int msg_code;
- union venc_msg_data msg_data;
+ u32 status_code;
+ u32 msg_code;
+ u32 msg_data_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int msg_data_size;
+ union venc_msg_data msg_data;
 };
 union venc_codec_config {
  struct venc_mpeg4_config mpeg4_params;
@@ -278,6 +278,11 @@ struct venc_seq_config {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct venc_q6_config q6_config;
 };
+struct venc_version {
+ u32 major;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ u32 minor;
+};
 #define VENC_IOCTL_MAGIC 'V'
 #define VENC_IOCTL_CMD_READ_NEXT_MSG   _IOWR(VENC_IOCTL_MAGIC, 1, struct venc_msg)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -302,4 +307,6 @@ struct venc_seq_config {
 #define VENC_IOCTL_SET_TARGET_BITRATE   _IOW(VENC_IOCTL_MAGIC, 17, int)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define VENC_IOCTL_SET_QP_RANGE   _IOW(VENC_IOCTL_MAGIC, 18, struct venc_qp_range)
+#define VENC_IOCTL_GET_VERSION   _IOR(VENC_IOCTL_MAGIC, 19, struct venc_version)
 #endif
+
