@@ -34,7 +34,9 @@ struct ion_handle;
  *				carveout heap, allocations are physically
  *				contiguous. Used for content protection.
  * @ION_HEAP_TYPE_DMA:          memory allocated via DMA API
- * @ION_HEAP_END:		helper for iterating over heaps
+ * @ION_NUM_HEAPS:		 helper for iterating over heaps, a bit mask
+ * 				 is used to identify the heaps, so only 32
+ * 				 total heap types are supported
  */
 enum ion_heap_type {
 	ION_HEAP_TYPE_SYSTEM,
@@ -43,7 +45,7 @@ enum ion_heap_type {
 	ION_HEAP_TYPE_DMA,
 	ION_HEAP_TYPE_CUSTOM, /* must be last so device specific heaps always
 				 are at the end of this enum */
-	ION_NUM_HEAPS,
+	ION_NUM_HEAPS = 16,
 };
 
 #define ION_HEAP_SYSTEM_MASK		(1 << ION_HEAP_TYPE_SYSTEM)
@@ -606,5 +608,13 @@ struct ion_custom_data {
  */
 #define ION_IOC_CUSTOM		_IOWR(ION_IOC_MAGIC, 6, struct ion_custom_data)
 
-
+/**
+ * DOC: ION_IOC_SYNC - syncs a shared file descriptors to memory
+ *
+ * Deprecated in favor of using the dma_buf api's correctly (syncing
+ * will happend automatically when the buffer is mapped to a device).
+ * If necessary should be used after touching a cached buffer from the cpu,
+ * this will make the buffer in memory coherent.
+ */
+#define ION_IOC_SYNC		_IOWR(ION_IOC_MAGIC, 7, struct ion_fd_data)
 #endif /* _LINUX_ION_H */
