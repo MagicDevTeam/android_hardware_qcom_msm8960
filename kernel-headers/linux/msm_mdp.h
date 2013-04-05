@@ -349,16 +349,26 @@ struct mdp_overlay_pp_params {
  struct mdp_igc_lut_data igc_cfg;
  struct mdp_sharp_cfg sharp_cfg;
 };
-struct mdp_overlay {
+enum {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ BLEND_OP_NOT_DEFINED = 0,
+ BLEND_OP_OPAQUE,
+ BLEND_OP_PREMULTIPLIED,
+ BLEND_OP_COVERAGE,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ BLEND_OP_MAX,
+};
+struct mdp_overlay {
  struct msmfb_img src;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_rect src_rect;
  struct mdp_rect dst_rect;
  uint32_t z_order;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t is_fg;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t alpha;
  uint32_t transp_mask;
+ uint32_t blend_op;
  uint32_t flags;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t id;
@@ -584,7 +594,7 @@ struct mdp_mixer_info {
  int mixer_num;
  int z_order;
 };
-#define MAX_PIPE_PER_MIXER 4
+#define MAX_PIPE_PER_MIXER 5
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msmfb_mixer_info_req {
  int mixer_num;
